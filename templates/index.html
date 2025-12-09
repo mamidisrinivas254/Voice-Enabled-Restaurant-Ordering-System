@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>voice-enabled-restaurant-ordering-system — Login</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>voice-enabled-restaurant-ordering-system</h1>
+    <p class="muted">Login to continue</p>
+
+    <form id="loginForm" onsubmit="return false;">
+  <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+  <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+  <button type="button" class="btn" onclick="loginUser()">Login</button>
+</form>
+
+
+    <div class="row" style="margin-top:16px;">
+      <button class="ghost" onclick="speakEnglish()">🔊  English  </button>
+      <button class="ghost" onclick="speakTelugu()">🔊 తెలుగు </button>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

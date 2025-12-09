@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard — Voice-Enabled Restaurant Ordering System
+</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="topbar">
+    <div>👋 Hi, <b id="who">{{ username }}</b> (<span id="role">{{ role }}</span>)</div>
+   <div style="display:flex; gap:10px;">
+  <a class="link" href="/logout">Logout</a>
+</div>
+
+</div>
+
+<div class="admin-only" style="display:none;">
+ 
+</div>
+
+  </div>
+<div id="dashboardContent">
+
+  <div class="user-only" style="display:none;">
+    <div style="display: flex; gap: 30px; justify-content: center; margin-top: 50px;">
+
+      
+      <div class="card full user-only">
+  <div class="row" style="justify-content: space-between; align-items: center;">
+    <h2>Menu</h2>
+    <div class="row" style="gap:8px;">
+      <button id="btnMenuEn" class="ghost small" onclick="setMenuLanguage('en')">
+        EN
+      </button>
+      <button id="btnMenuTe" class="ghost small" onclick="setMenuLanguage('te')">
+        తెలు
+      </button>
+    </div>
+  </div>
+  <table id="menuTable">
+    <thead>
+      <tr><th>ID</th><th>Item</th><th>Price (₹)</th><th>Available</th></tr>
+    </thead>
+    <tbody id="menuBody"></tbody>
+  </table>
+</div>
+
+      
+      <div class="card full" style="width: 45%;">
+        <h2>Place Order</h2>
+
+        <label>Item</label>
+        <select id="itemSelect"></select>
+
+        <label>Quantity</label>
+        <input type="number" id="qty" value="1" min="1">
+
+        <button onclick="placeOrder()" class="btn green">Place Order</button>
+        <p id="orderMsg"></p>
+
+        <hr>
+
+        <h3>Voice Order</h3>
+        <button onclick="voiceOrder('en-IN')" class="ghost">🎤 English</button>
+        <button onclick="voiceOrder('te-IN')" class="ghost">🎤 తెలుగు</button>
+        <p id="voiceText"></p>
+      </div>
+    </div>
+
+    
+    <div id="receiptCard" class="card" style="display:none; width: 40%; margin: 20px auto;">
+      <h3>Receipt</h3>
+      <pre id="receiptBox" style="white-space: pre-line;"></pre>
+      <button onclick="printReceipt()" class="btn ghost">Print</button>
+    </div>
+  </div>
+
+  
+  <div class="admin-only" style="display:none; text-align:center; margin-top: 80px;">
+    <h1>👑 Admin Dashboard</h1>
+    <div class="card" style="width:50%; margin:auto;">
+      <h2>Manage Menu</h2>
+      <p>Admin can edit menu — coming soon</p>
+    </div>
+  </div>
+
+</div>
+
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
