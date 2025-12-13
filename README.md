@@ -13,30 +13,29 @@ feedback using text-to-speech.
 - Food receipt with print option
 - Multilingual support (English / Telugu)
 
-# Project Folder Structure
+## Project Folder Structure
 
+```text
 Voice-Enabled-Restaurant-Ordering-System/
-│
-├── app.py                # Flask backend
-├── requirements.txt      # Dependencies
-├── README.md             # Project documentation
-├── .gitignore            # Ignore venv, cache, etc.
-│
-├── static/               # CSS, JS, Images
-│   ├── css/style.css
-│   ├── js/main.js
-│
-├── templates/            # HTML Pages
-│   ├── login.html
-│   ├── user.html
-│   ├── dashboard.html
-│
-├── screenshots/          # UI preview
-│   ├── login.png
-│   ├── menu.png
-│   ├── voice-order.png
-│   ├── receipt.png
-│   ├── dashboard.png
+├── app.py                 # Flask backend
+├── requirements.txt       # Dependencies
+├── README.md              # Project documentation
+├── .gitignore             # Ignore venv, cache, etc.
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+├── templates/
+│   ├── index.html
+│   └── dashboard.html
+└── screenshots/
+    ├── login.png
+    ├── menu.png
+    ├── voice-order.png
+    ├── receipt.png
+    └── dashboard.png
+
 
 
 # Tech Stack
