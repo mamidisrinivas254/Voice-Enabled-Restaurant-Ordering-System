@@ -20,7 +20,8 @@ Voice-Enabled-Restaurant-Ordering-System/
 ├── app.py                 # Flask backend
 ├── requirements.txt       # Dependencies
 ├── README.md              # Project documentation
-├── .gitignore             # Ignore venv, cache, etc.
+├── .gitignore
+├── ca.pem           
 ├── static/
 │   ├── css/
 │   │   └── style.css
