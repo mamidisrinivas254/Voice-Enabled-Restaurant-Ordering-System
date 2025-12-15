@@ -1,30 +1,34 @@
-
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
-import mysql.connector as db
+import mysql.connector          
 from mysql.connector import Error
 from gtts import gTTS
 import os, time, re
 from datetime import datetime
 
+
 app = Flask(__name__, template_folder="templates", static_folder="static")
 app.secret_key = "super-secret-key-change-it"
 
-# Database Configuration
+
 
 DB_CFG = {
-    "host": "localhost",
-    "user": "srinu",
-    "password": "Srinu12345",
-    "database": "restaurant"
+    "host": "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+    "user": "3payERwEpdbUUiL.root",
+    "password": "op4ApnvV0XUYAT0F",
+    "database": "test",
+    "port": 4000,
+    "ssl_ca": "ca.pem"
 }
 
 def get_db():
     try:
-        connection = db.connect(**DB_CFG)
-        return connection
+        conn = mysql.connector.connect(**DB_CFG)
+        return conn
     except Error as e:
-        print("DB ERROR:", e)
+        print("❌ TiDB connection failed:", e)
         return None
+
+
 
 # ROUTES — USER AUTHENTICATION
 
@@ -302,6 +306,6 @@ def speak():
         print("❌ TTS FAILED:", e)
         return jsonify({"error": str(e)}), 500
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+
