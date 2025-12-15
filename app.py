@@ -7,7 +7,8 @@ from datetime import datetime
 
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.secret_key = "super-secret-key-change-it"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-key")
+
 
 
 
