@@ -4,8 +4,9 @@ A simple Flask-based web application that allows users to order food using
 normal button clicks or voice commands (English & Telugu). It also gives spoken
 feedback using text-to-speech.
 
-⚠️ Deployment Note: This application is deployed on Render free tier.
-The service may take 20–40 seconds to wake up on first request due to cold start.
+**Deployment Note**
+This application is deployed on Render free tier.
+The service may take 20–40 seconds to wake up on the first request due to cold start behavior.
 
 
 # Features
